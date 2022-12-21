@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
- const Profile = (props) => {
-    console.log(props);
+ const Profile = ({Bio,profession,fullName,children,handleName}) => {
     const myStyle={
         textAlign:"center",
         color:"#30D5C8",
@@ -11,10 +10,11 @@ import PropTypes from "prop-types";
     }
 return (
 <div>
-<h1 style={myStyle}>  FullName={props.fullName}</h1>
-<h2 style ={{color:"black",textAlign:"center"}}> Profession={props.profession}</h2>
-<p style ={{color:"black",textAlign:"center"}}> Bio={props.Bio}</p>
-{props.children}
+<h1 style={myStyle}>  FullName={fullName}</h1>
+<h2 style ={{color:"black",textAlign:"center"}}> Profession={profession}</h2>
+<p style ={{color:"black",textAlign:"center"}}> Bio={Bio}</p>
+{children}
+<button  onClick={()=>handleName(fullName)}>click</button>
 </div>
 )} 
 
@@ -31,3 +31,5 @@ Profile.propTypes = {
 
 }
 export default Profile;
+
+
